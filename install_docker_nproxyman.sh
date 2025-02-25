@@ -1,3 +1,5 @@
+docker network inspect my_bridge_network >/dev/null 2>&1 || docker network create --driver=bridge --subnet=172.20.0.0/16 my_bridge_network
+
 #!/bin/bash
 
 installApps()
