@@ -1,6 +1,6 @@
 version: '3'
 services:
-  app:
+  npm:
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
     ports:
@@ -10,3 +10,10 @@ services:
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
+    networks:
+      my_bridge_network:
+        ipv4_address: 172.20.0.2
+
+networks:
+  my_bridge_network:
+    external: true
